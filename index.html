@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨ Cantinho da Lui ᨳ𐔌՞҂ ˕ ֊՞𐦯 ✨</title>
+    <!-- Fonte retro/fofa do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=VT323&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- PALETA DE CORES E VARIÁVEIS Y2K / ROXO FOFO --- */
+        :root {
+            --bg-color: #f3e8ff;
+            --text-color: #4a154b;
+            --card-bg: rgba(255, 255, 255, 0.94);
+            --card-header: #e9d5ff;
+            --border-color: #c084fc;
+            --btn-bg: #f3e8ff;
+            --btn-text: #581c87;
+            --accent: #9333ea;
+            --shadow: 4px 4px 0px #c084fc;
+            --dot-color: rgba(192, 132, 252, 0.45);
+        }
+
+        /* MODOS ESCURO (DARK MODE Y2K) */
+        body.dark {
+            --bg-color: #1e1029;
+            --text-color: #f3e8ff;
+            --card-bg: rgba(30, 16, 41, 0.94);
+            --card-header: #581c87;
+            --border-color: #a855f7;
+            --btn-bg: #3b0764;
+            --btn-text: #f3e8ff;
+            --accent: #c084fc;
+            --shadow: 4px 4px 0px #a855f7;
+            --dot-color: rgba(168, 85, 247, 0.4);
+        }
+
+        /* RESET E ESTILOS GERAIS */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Fredoka', cursive, sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            padding-bottom: 40px;
+            /* NOVA IMAGEM DE FUNDO REPETIDA LADO A LADO PARA MANTER A QUALIDADE MÁXIMA */
+            background-image: url('https://i.pinimg.com/736x/7c/0f/26/7c0f262021905742bfdbc8839b72c629.jpg');
+            background-repeat: repeat;
+            background-position: top left;
+            background-size: auto;
+            min-height: 100vh;
+        }
+
+        /* BARRA SUPERIOR */
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 20px;
+            background-color: var(--card-bg);
+            border-bottom: 3px solid var(--border-color);
+            backdrop-filter: blur(5px);
+        }
+
+        .logo {
+            font-family: 'VT323', monospace;
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: var(--accent);
+        }
+
+        /* LAYOUT PRINCIPAL */
+        .container {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 0 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        /* ESTILO DAS JANELAS ESTILO OS ANTIGO */
+        .window {
+            background-color: var(--card-bg);
+            border: 3px solid var(--border-color);
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            backdrop-filter: blur(8px);
+        }
+
+        .window-header {
+            background-color: var(--card-header);
+            padding: 8px 15px;
+            font-family: 'VT323', monospace;
+            font-size: 1.3rem;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--border-color);
+            color: var(--btn-text);
+        }
+
+        .window-buttons span {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            line-height: 12px;
+            text-align: center;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 11px;
+            cursor: pointer;
+            margin-left: 3px;
+        }
+
+        .window-content {
+            padding: 20px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* AVATAR COM BRILHOS */
+        .avatar-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .avatar-img {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid var(--border-color);
+            box-shadow: var(--shadow);
+        }
+
+        .sparkles {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            font-size: 1.5rem;
+            animation: bounce 1.5s infinite alternate;
+        }
+
+        /* TEXTOS */
+        .title {
+            font-size: 1.8rem;
+            color: var(--accent);
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            margin-bottom: 15px;
+        }
+
+        .bio {
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        /* BOTÕES ESTILO RETRÔ Y2K */
+        .btn-retro {
+            background-color: var(--btn-bg);
+            color: var(--btn-text);
+            border: 2px solid var(--border-color);
+            padding: 10px 18px;
+            font-size: 0.95rem;
+            font-weight: bold;
+            border-radius: 20px;
+            cursor: pointer;
+            box-shadow: 2px 2px 0px var(--border-color);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin: 5px;
+        }
+
+        .btn-retro:hover {
+            transform: translate(-1px, -1px);
+            box-shadow: 4px 4px 0px var(--border-color);
+        }
+
+        .btn-retro:active {
+            transform: translate(1px, 1px);
+            box-shadow: 1px 1px 0px var(--border-color);
+        }
+
+        /* SEÇÃO DE CURTIDAS */
+        .like-section {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .badge {
+            background-color: var(--card-header);
+            border: 2px solid var(--border-color);
+            padding: 6px 14px;
+            border-radius: 15px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        /* CAIXA DA CURIOSIDADE */
+        .curiosity-box {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: var(--bg-color);
+            border: 2px dashed var(--border-color);
+            border-radius: 12px;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        /* LISTAS E PROJETOS */
+        .skills-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 10px 0 20px 0;
+        }
+
+        .skills-list li {
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            padding: 6px 14px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+        }
+
+        .project-card {
+            background: var(--bg-color);
+            border: 2px solid var(--border-color);
+            padding: 15px;
+            border-radius: 12px;
+            margin-top: 10px;
+        }
+
+        .project-card h4 {
+            color: var(--accent);
+            margin-bottom: 5px;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 0.9rem;
+            margin-top: 20px;
+            background-color: var(--card-bg);
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 2px solid var(--border-color);
+        }
+
+        /* ANIMAÇÕES */
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-8px); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- BARRA SUPERIOR / HEADER -->
+    <header class="top-bar">
+        <div class="logo">ᨳ𐔌՞ Lui.exe 𐦯ᜊ</div>
+        <button id="btn-tema" class="btn-retro">꒰ᐢ. .ᐢ꒱ Modo Escuro</button>
+    </header>
+
+    <div class="container">
+        
+        <!-- CARTÃO PRINCIPAL: SOBRE MIM -->
+        <main class="window">
+            <div class="window-header">
+                <span>҂ ˕ ֊՞ sobre_lui.txt</span>
+                <div class="window-buttons">
+                    <span>_</span>
+                    <span>□</span>
+                    <span>x</span>
+                </div>
+            </div>
+            
+            <div class="window-content text-center">
+                <!-- FOTO DE PERFIL ENVIADA POR VOCÊ -->
+                <div class="avatar-container">
+                    <img src="https://i.pinimg.com/474x/ff/be/c9/ffbec9643140e6c12286e23393186c05.jpg" alt="Foto da Lui" id="avatar" class="avatar-img">
+                    <div class="sparkles">ᨳ𐔌՞</div>
+                </div>
+
+                <!-- DADOS DA LUI -->
+                <h1 class="title">Olá, eu sou a Lui! ꒰ᐢ. .ᐢ꒱</h1>
+                <p class="subtitle">𐦯ᜊ Desenvolvedora em Construção</p>
+
+                <p class="bio">
+                    Bem-vinda(o) ao meu cantinho interativo na web! Aqui compartilho meus aprendizados em programação e meus projetos fofos.
+                </p>
+
+                <!-- BOTÃO 1: CONTADOR DE CURTIDAS (DOM) -->
+                <div class="like-section">
+                    <button id="btn-curtir" class="btn-retro btn-heart">
+                        (⁠ ⁠a⁠ ⁠o⁠ ⁠)⁠੭ Deixar um Like
+                    </button>
+                    <span id="contador" class="badge">0 curtidas</span>
+                </div>
+            </div>
+        </main>
+
+        <!-- CARTÃO DE CURIOSIDADES (DOM) -->
+        <section class="window">
+            <div class="window-header">
+                <span>ᨳ𐔌՞ segredinho.doc</span>
+                <div class="window-buttons">
+                    <span>_</span>
+                    <span>□</span>
+                    <span>x</span>
+                </div>
+            </div>
+            <div class="window-content text-center">
+                <p>Quer descobrir uma curiosidade sobre mim? ҂ ˕ ֊՞</p>
+                
+                <button id="btn-curiosidade" class="btn-retro">
+                    ꒰ᐢ. .ᐢ꒱ Revelar Curiosidade
+                </button>
+
+                <!-- TEXTO DA CURIOSIDADE (COMEÇA INVISÍVEL) -->
+                <div id="texto-curiosidade" class="curiosity-box" style="display: none;">
+                    <p>𐦯ᜊ <strong>Curiosidade:</strong> Minha cor favorita é roxo e eu amo escutar kpop!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CARTÃO DE PROJETOS / HABILIDADES -->
+        <section class="window">
+            <div class="window-header">
+                <span>꒰ᐢ. .ᐢ꒱ meus_projetos.folder</span>
+                <div class="window-buttons">
+                    <span>_</span>
+                    <span>□</span>
+                    <span>x</span>
+                </div>
+            </div>
+            <div class="window-content">
+                <h3>ᨳ𐔌՞ Habilidades</h3>
+                <ul class="skills-list">
+                    <li>҂ ˕ ֊՞ HTML5 & CSS3</li>
+                    <li>𐦯ᜊ JavaScript (DOM)</li>
+                    <li>꒰ᐢ. .ᐢ꒱ K-Pop Fan</li>
+                </ul>
+
+                <h3>ᨳ𐔌՞ Meu Projeto Favorito</h3>
+                <div class="project-card">
+                    <h4>🍱 Baú de Merenda</h4>
+                    <p>Um projeto super fofo e especial focado na organização e compartilhamento de refeições deliciosas! 𐦯ᜊ</p>
+                </div>
+            </div>
+        </section>
+
+        <div style="text-align: center;">
+            <footer class="footer">
+                <p>Feito por Lui ꒰ᐢ. .ᐢ꒱ • 2026</p>
+            </footer>
+        </div>
+
+    </div>
+
+    <!-- CÓDIGO JAVASCRIPT DOS 3 PILARES DO DOM -->
+    <script>
+        // ==========================================
+        // 1. RECURSO: DARK MODE (ALTERNAR TEMA)
+        // ==========================================
+        // 1. Selecionar elemento
+        const btnTema = document.getElementById("btn-tema");
+
+        // 2. Escutar evento
+        btnTema.addEventListener("click", function () {
+            // 3. Alterar classe do body
+            document.body.classList.toggle("dark");
+
+            if (document.body.classList.contains("dark")) {
+                btnTema.textContent = "( ☀️ ) Modo Claro";
+            } else {
+                btnTema.textContent = "꒰ᐢ. .ᐢ꒱ Modo Escuro";
+            }
+        });
+
+
+        // ==========================================
+        // 2. RECURSO: CURIOSIDADE OCULTA
+        // ==========================================
+        // 1. Selecionar elementos
+        const btnCuriosidade = document.getElementById("btn-curiosidade");
+        const textoCuriosidade = document.getElementById("texto-curiosidade");
+
+        // 2. Escutar evento
+        btnCuriosidade.addEventListener("click", function () {
+            // 3. Alterar propriedade de exibição (display)
+            if (textoCuriosidade.style.display === "none") {
+                textoCuriosidade.style.display = "block";
+                btnCuriosidade.textContent = "҂ ˕ ֊՞ Esconder Curiosidade";
+            } else {
+                textoCuriosidade.style.display = "none";
+                btnCuriosidade.textContent = "꒰ᐢ. .ᐢ꒱ Revelar Curiosidade";
+            }
+        });
+
+
+        // ==========================================
+        // 3. RECURSO: CONTADOR DE CURTIDAS
+        // ==========================================
+        // 1. Selecionar elementos
+        const btnCurtir = document.getElementById("btn-curtir");
+        const contador = document.getElementById("contador");
+
+        let curtidas = 0;
+
+        // 2. Escutar evento
+        btnCurtir.addEventListener("click", function () {
+            curtidas++;
+            // 3. Alterar texto da tela
+            contador.textContent = `${curtidas} curtidas 𐦯ᜊ`;
+        });
+    </script>
+</body>
+</html>
